@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Converted Currency</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<p th:text="'Today\'s converted rate for ' + ${amount} + ' - ' + ${baseCurrency} +' to ' + ${targetCurrency} + ' is ' + ${convertedCurrency} + ' - ' + ${targetCurrency}" type="text"/>
+
+
+</body>
+</html>
