@@ -1,7 +1,11 @@
 package com.example.currconv.command;
 
 import java.util.*;
-
+/**
+ * Displays list of currencies. Value is displayed as code - description
+ * @author SibyThomas
+ *
+ */
 public class ListofCurrency {
     public static HashMap<String,String> getAllCurrencies()
     {

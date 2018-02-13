@@ -2,7 +2,9 @@ package com.example.currconv.model;
 
 import java.util.Map;
 import java.util.TreeMap;
-
+/*
+ * This class is to collect response from api
+ */
 public class CurrConvertResp {
 
 

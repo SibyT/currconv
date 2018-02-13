@@ -10,7 +10,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
-
+/**
+ * 
+ * @author SibyThomas
+ *
+ */
 @Controller
 public class WebController  {
 
@@ -37,14 +41,22 @@ public class WebController  {
         String view="result";
 
         if(amt.equalsIgnoreCase("")||amt==null){
+        	
+        	//error message is amount is blank
             errorMessage="Please enter the amount correctly.";
             model.addAttribute("error",errorMessage);
+            //displays error html
             view="error";
         }else if(base.equalsIgnoreCase(target)){
+        	
+        	//error message if both currency is same
             errorMessage="Please provide different base and target currency";
             model.addAttribute("error",errorMessage);
+            
+            //displays error html
             view="error";
         } else {
+        	//calls rest api fixer.io
             RestService res = new RestService();
             Double convertedCurrency = Double.parseDouble(amt) * Double.parseDouble(res.callCurrencyExchanger(base, target));
 

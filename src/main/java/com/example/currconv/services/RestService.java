@@ -6,10 +6,17 @@ import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-
+/*
+ * This class is used to call rest api
+ */
 public class RestService {
 
-
+	/**
+	 * Calls rate api 
+	 * @param base
+	 * @param target
+	 * @return
+	 */
     public String callCurrencyExchanger(String base,String target)  {
         RestTemplate restTemplate = new RestTemplate();
         URI url = null;
