@@ -3,6 +3,7 @@ package com.example.currconv.controller;
 
 import com.example.currconv.command.ListofCurrency;
 import com.example.currconv.services.RestService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,8 @@ import java.util.TreeMap;
 @Controller
 public class WebController  {
 
-
+    @Autowired
+    RestService res ;
     @GetMapping("/")
         public String showForm(Model model) {
         HashMap<String,String> listofCurrencies= ListofCurrency.getAllCurrencies();
@@ -57,7 +59,7 @@ public class WebController  {
             view="error";
         } else {
         	//calls rest api fixer.io
-            RestService res = new RestService();
+
             Double convertedCurrency = Double.parseDouble(amt) * Double.parseDouble(res.callCurrencyExchanger(base, target));
 
             model.addAttribute("amount", amt);

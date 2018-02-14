@@ -2,6 +2,7 @@ package com.example.currconv.services;
 
 import com.example.currconv.model.CurrConvertResp;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
@@ -9,10 +10,11 @@ import java.net.URISyntaxException;
 /*
  * This class is used to call rest api
  */
+@Service
 public class RestService {
 
 	/**
-	 * Calls rate api 
+	 * Calls rate api
 	 * @param base
 	 * @param target
 	 * @return

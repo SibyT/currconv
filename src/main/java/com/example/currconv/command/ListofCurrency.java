@@ -1,12 +1,16 @@
 package com.example.currconv.command;
 
+import org.springframework.stereotype.Component;
+
 import java.util.*;
 /**
  * Displays list of currencies. Value is displayed as code - description
  * @author SibyThomas
  *
  */
+@Component
 public class ListofCurrency {
+
     public static HashMap<String,String> getAllCurrencies()
     {
         HashMap<String,String> toret = new HashMap<>();
